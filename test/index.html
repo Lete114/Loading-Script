@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading-Script</title>
+    <script src="./loading-script.js"></script>
+  </head>
+  <body>
+    <script>
+      getLink('./index.css')
+      getStyle('.test{background-color: #00c4b6;height:400px}')
+      getScript(
+        './index.js',
+        function () {
+          var div = document.createElement('div')
+          div.className = 'test'
+          document.body.appendChild(div)
+        },
+        {
+          remove: false, // It is not deleted after loading Element
+          text: 'test inject',
+          attrs: {
+            test: 'test attr',
+            id: 'loading-script'
+          }
+        }
+      )
+    </script>
+  </body>
+</html>
