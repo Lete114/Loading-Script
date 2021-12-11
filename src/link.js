@@ -9,8 +9,9 @@ function getLink(href, options = {}) {
   const link = document.createElement('link')
   link.rel = options.rel || 'stylesheet'
   link.type = options.type || 'text/css'
-  link.as = options.as || ''
   link.href = href
+
+  if (options.as) link.as = options.as
 
   if (options.attrs) setAttributes(link, options.attrs)
 

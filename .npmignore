@@ -1,2 +1,8 @@
 .vscode/
 node_modules/
+test
+webpack
+.editorconfig
+.prettierrc.yml
+babel.config.js
+package-lock.json
